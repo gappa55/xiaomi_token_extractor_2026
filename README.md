@@ -2,8 +2,8 @@
 
 Xiaomi cloud token extractor by Piotr Machowski, fixed so that new xiaomi 2FA method works.
 
-confirmed working with supplying email as the username.
-captcha and 2FA works, just type in the code you receive on your email
+Confirmed working with supplying email as the username.
+Captcha and 2FA works, just type in the code you receive on your email.
 
 ## Requirements
 
@@ -29,7 +29,7 @@ pip install requests pycryptodome Pillow
 python3 token_extractor_2026.py
 ```
 
-จะถาม username, password, และ server ทีละขั้นตอน
+You will be prompted for username, password, and server step by step.
 
 ### Non-interactive mode
 
@@ -41,24 +41,24 @@ python3 token_extractor_2026.py -u YOUR_EMAIL -p YOUR_PASSWORD -s cn
 
 | Flag | Description |
 |------|-------------|
-| `-ni`, `--non_interactive` | รันแบบไม่ต้องถาม input |
-| `-u`, `--username` | Username (email หรือ user ID) |
+| `-ni`, `--non_interactive` | Run without interactive prompts |
+| `-u`, `--username` | Username (email or user ID) |
 | `-p`, `--password` | Password |
-| `-s`, `--server` | Server: `cn`, `de`, `us`, `ru`, `tw`, `sg`, `in`, `i2` หรือเว้นว่างเพื่อตรวจทุก server |
+| `-s`, `--server` | Server: `cn`, `de`, `us`, `ru`, `tw`, `sg`, `in`, `i2`, or leave empty to check all servers |
 | `-l`, `--log_level` | Log level: `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL` (default: `CRITICAL`) |
-| `-o`, `--output` | บันทึกผลลัพธ์เป็นไฟล์ JSON |
-| `--host` | Host สำหรับแสดง captcha image |
+| `-o`, `--output` | Save output to a JSON file |
+| `--host` | Host for serving captcha image |
 
 ### Examples
 
-ตรวจทุก server และบันทึกผลเป็นไฟล์:
+Check all servers and save results to a file:
 ```bash
 python3 token_extractor_2026.py -o output.json
 ```
 
-ตรวจเฉพาะ server ญี่ปุ่น พร้อม debug log:
+Check a specific server with debug logging:
 ```bash
-python3 token_extractor_2026.py -s cn -l DEBUG
+python3 token_extractor_2026.py -s de -l DEBUG
 ```
 
 ## Servers
